@@ -67,6 +67,7 @@ namespace csharpi
 
         private Task ReadyAsync()
         {
+            // client is basically the bot
             Console.WriteLine($"Connected as -> [{_client.CurrentUser}] :)");
             return Task.CompletedTask;
         }

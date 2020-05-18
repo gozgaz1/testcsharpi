@@ -24,15 +24,14 @@ namespace csharpi.Modules
             var user = Context.User;
             
             // build out the reply
-            sb.AppendLine($"You are -> [{user.Username}]");
-            sb.AppendLine("I must now say, World!");
+            sb.AppendLine($"'sup~ {user.Username}");
 
             // send simple string reply
             await ReplyAsync(sb.ToString());
         }
 
-        [Command("Smack")]
-        [Alias("hit")]
+        [Command("smack")]
+        [Alias("tap")]
         public async Task SmackCommand()
         {
             // initialize empty string builder for reply
@@ -50,7 +49,7 @@ namespace csharpi.Modules
 
         [Command("8ball")]
         [Alias("ask")]
-        [RequireUserPermission(GuildPermission.KickMembers)]
+        // [RequireUserPermission(GuildPermission.KickMembers)]
         public async Task AskEightBall([Remainder]string args = null)
         {
             // I like using StringBuilder to build out the reply
