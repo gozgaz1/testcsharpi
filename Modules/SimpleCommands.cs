@@ -24,7 +24,7 @@ namespace csharpi.Modules
             var user = Context.User;
             
             // build out the reply
-            sb.AppendLine($"'sup~ {user.Username}");
+            sb.AppendLine($"'sup~ {user.Mention}");
 
             // send simple string reply
             await ReplyAsync(sb.ToString());
@@ -41,9 +41,9 @@ namespace csharpi.Modules
             var user = Context.User;
             
             // build out the reply
-            sb.AppendLine($"Smack @{user.Username}");
+            sb.AppendLine($"Smack {user.Mention}");
 
-            // send simple string reply
+            // this will reply with the embed
             await ReplyAsync(sb.ToString());
         }
 
